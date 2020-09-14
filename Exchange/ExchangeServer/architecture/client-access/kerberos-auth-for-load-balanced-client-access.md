@@ -25,7 +25,8 @@ In order for you to use Kerberos authentication with load-balanced Mailbox serve
 All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same *alternate service account credential* or (ASA credential). In general, it's sufficient to have a single account for a forest for each version of Exchange.
 
 > [!IMPORTANT]
-> Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016. <br/><br/> While CNAME records are supported for shared namespaces, Microsoft recommends using A records. This ensures that the client correctly issues a Kerberos ticket request based on the shared name, and not the server FQDN.
+> Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016. For more information about creating a new ASA credential and removing HTTP SPN from Exchange 2010 ASA, please see https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-2013-and-exchange-2010-coexistence-with-kerberos/ba-p/611196
+<br/><br/> While CNAME records are supported for shared namespaces, Microsoft recommends using A records. This ensures that the client correctly issues a Kerberos ticket request based on the shared name, and not the server FQDN.
 
 > [!NOTE]
 > Group Managed Service Accounts (gMSA) are not supported in on-premises Exchange Server environments and thus cannot be used in this scenario.
